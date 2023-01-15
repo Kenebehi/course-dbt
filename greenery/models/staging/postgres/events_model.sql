@@ -1,0 +1,10 @@
+SELECT
+  EVENT_ID,
+  SESSION_ID,
+  USER_ID,
+  EVENT_TYPE,
+  PAGE_URL,
+  CREATED_AT AS CREATED_DATE,
+  ORDER_ID,
+  PRODUCT_ID
+FROM {{ source('postgres', 'events') }}
