@@ -1,0 +1,50 @@
+
+version: 2
+
+sources:
+  - name: postgres
+    description: Data from application database, brought in by an EL process.
+    database: raw
+    schema: public
+    tables:
+      - name: users
+        columns:
+        - name: user_id
+          tests:
+            - not_null
+
+      - name: addresses
+        columns:
+        - name: address_id
+          tests:
+            - not_null
+
+      - name: events
+        columns:
+        - name: event_id
+          tests:
+            - not_null
+
+      - name: order_items
+        columns:
+        - name: order_id
+          tests:
+            - not_null
+
+      - name: orders
+        columns:
+        - name: order_id
+          tests:
+            - not_null
+
+      - name: products
+        columns:
+        - name: product_id
+          tests:
+            - not_null
+
+      - name: promos
+        columns:
+        - name: promo_id
+          tests:
+            - not_null

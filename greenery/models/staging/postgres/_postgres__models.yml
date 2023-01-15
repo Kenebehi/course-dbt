@@ -1,0 +1,79 @@
+version: 2
+
+models:
+  - name: events_model
+    description: "A model for the events"
+    columns:
+      - name: event_id
+        description: "PrimaryKey Granularity: single event"
+        tests:
+          - unique
+          - not_null
+      - name: session_id
+        description: "ForeignKey -> session table"
+      - name: user_id
+        description: "ForeignKey -> user table"
+      - name: event_type
+        description: "description of event"
+      - name: page_url
+        description: "value of page url"
+      - name: created_at
+        description: "Timestamp event occured"
+      - name: order_id
+        description: "ForeignKey -> orders table"
+      - name: product_id
+        description: "ForeignKey -> products table"
+
+  - name: address_model
+    description: "A staging model for the addresses"
+    columns:
+      - name: address_id
+        description: "PrimaryKey Granularity: single address"
+        tests:
+          - unique
+          - not_null
+
+  - name: orders_model
+    description: "A staging model for the orders"
+    columns:
+      - name: order_id
+        description: "PrimaryKey Granularity: single order"
+        tests:
+          - unique
+          - not_nulls
+
+  - name: order_items_model
+    description: "A staging model for the order items"
+    columns:
+      - name: order_item_id
+        description: "PrimaryKey Granularity: single order item"
+        tests:
+          - unique
+          - not_null
+
+  - name: products_model
+    description: "A staging model for the products"
+    columns:
+      - name: product_id
+        description: "PrimaryKey Granularity: single product"
+        tests:
+          - unique
+          - not_null
+
+  - name: promos_model
+    description: "A staging model for the promos"
+    columns:
+      - name: promo_id
+        description: "PrimaryKey Granularity: single promo"
+        tests:
+          - unique
+          - not_null        
+
+  - name: users_model
+    description: "A staging model for the users"
+    columns:
+      - name: user_id
+        description: "PrimaryKey Granularity: single user"
+        tests:
+          - unique
+          - not_null  

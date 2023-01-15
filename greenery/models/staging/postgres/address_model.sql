@@ -4,4 +4,4 @@ SELECT
     ZIPCODE, 
     STATE, 
     COUNTRY   
-FROM {{ source('postgres', 'address') }}
+FROM {{ source('postgres', 'addresses') }}
