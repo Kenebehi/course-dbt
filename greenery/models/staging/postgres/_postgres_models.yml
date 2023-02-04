@@ -38,14 +38,11 @@ models:
     columns:
       - name: order_id
         description: "PrimaryKey Granularity: single order"
-        tests:
-          - unique
-          - not_nulls
 
   - name: order_items_model
     description: "A staging model for the order items"
     columns:
-      - name: order_item_id
+      - name: order_id
         description: "PrimaryKey Granularity: single order item"
         tests:
           - unique
@@ -67,8 +64,11 @@ models:
         description: "PrimaryKey Granularity: single promo"
         tests:
           - unique
-          - not_null        
-
+          - not_null  
+      - name: discount
+        description: column specifying discount amount
+        tests:
+          - test_gte
   - name: users_model
     description: "A staging model for the users"
     columns:
